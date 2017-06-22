@@ -3,6 +3,10 @@ function backSpace() {
 	document.getElementById("display").value = backSpaceVar.slice(0, backSpaceVar.length - 1);
 }
 
+function clearScreen() {
+	document.getElementById("display").value = "";
+}
+
 function nums(numValue) {
 	document.getElementById("display").value += numValue;
 }
