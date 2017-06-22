@@ -1,3 +1,13 @@
+var powerCheck = document.getElementById("power");
+
+function powerOnOff() {
+	if (powerCheck.innerHTML == "ON") {
+		document.getElementById("power").innerHTML = "OFF";
+	} else {
+		document.getElementById("power").innerHTML = "ON";
+	}
+}
+
 function backSpace() {
 	var backSpaceVar = document.getElementById("display").value;
 	document.getElementById("display").value = backSpaceVar.slice(0, backSpaceVar.length - 1);
