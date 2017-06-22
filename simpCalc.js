@@ -20,3 +20,6 @@ function solver() {
 	document.getElementById("display").value = ans;
 }
 
+function dot() {
+	document.getElementById("display").value += ".";
+}
