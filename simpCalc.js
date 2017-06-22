@@ -1,4 +1,4 @@
-function goBack() {
+function backSpace() {
 	var backSpaceVar = document.getElementById("display").value;
 	document.getElementById("display").value = backSpaceVar.slice(0, backSpaceVar.length - 1);
 }
