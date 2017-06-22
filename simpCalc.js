@@ -14,3 +14,9 @@ function nums(numValue) {
 function operat(operatValue) {
 	document.getElementById("display").value+=operatValue;
 }
+
+function solver() {
+	var ans = eval(document.getElementById("display").value);
+	document.getElementById("display").value = ans;
+}
+
