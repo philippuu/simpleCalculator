@@ -31,6 +31,7 @@ function nums(numValue) {
 }
 
 function operat(operatValue) {
+	clearInit();
 	if (document.getElementById("pw").innerHTML == "TurnOFF") {
 		document.getElementById("display").value+=operatValue;
 	}
