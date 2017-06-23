@@ -4,8 +4,14 @@ var reset = false;
 //var checker = document.getElementById("pw").innerHTML;
 
 function power(){
-	document.getElementById("display").value = "clicked";
-	document.getElementById("pw").innerHTML = "OFF";
+	if (document.getElementById("pw").innerHTML == "TurnON") {
+		document.getElementById("pw").innerHTML = "TurnOFF";
+		document.getElementById("pw").style.background = "green";
+	} else {
+		document.getElementById("pw").innerHTML = "TurnON";
+		document.getElementById("display").value = "";
+		document.getElementById("pw").style.background = "red";
+	}
 }
 
 function backSpace() {
