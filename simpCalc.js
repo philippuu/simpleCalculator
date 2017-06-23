@@ -1,11 +1,11 @@
-var powerCheck = document.getElementById("power");
 
-function powerOnOff() {
-	if (powerCheck.innerHTML == "ON") {
-		document.getElementById("power").innerHTML = "OFF";
-	} else {
-		document.getElementById("power").innerHTML = "ON";
-	}
+var reset = false;
+
+//var checker = document.getElementById("pw").innerHTML;
+
+function power(){
+	document.getElementById("display").value = "clicked";
+	document.getElementById("pw").innerHTML = "OFF";
 }
 
 function backSpace() {
@@ -18,6 +18,8 @@ function clearScreen() {
 }
 
 function nums(numValue) {
+	if (true) {clearInit();}
+	
 	document.getElementById("display").value += numValue;
 }
 
@@ -28,8 +30,16 @@ function operat(operatValue) {
 function solver() {
 	var ans = eval(document.getElementById("display").value);
 	document.getElementById("display").value = ans;
+	reset = true;
 }
 
 function dot() {
 	document.getElementById("display").value += ".";
+}
+
+function clearInit(){
+	if(reset){
+		document.getElementById("display").value = "";
+		reset = false;
+	}
 }
