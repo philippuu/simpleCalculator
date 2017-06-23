@@ -24,13 +24,16 @@ function clearScreen() {
 }
 
 function nums(numValue) {
-	if (true) {clearInit();}
-	
-	document.getElementById("display").value += numValue;
+	clearInit();
+	if (document.getElementById("pw").innerHTML == "TurnOFF") {
+		document.getElementById("display").value += numValue;
+	}
 }
 
 function operat(operatValue) {
-	document.getElementById("display").value+=operatValue;
+	if (document.getElementById("pw").innerHTML == "TurnOFF") {
+		document.getElementById("display").value+=operatValue;
+	}
 }
 
 function solver() {
