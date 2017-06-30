@@ -3,42 +3,43 @@
 <head>
 	<title>Simple Calculator</title>
 	<link rel="stylesheet" type="text/css" href="simpCalc.css">
+	<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
 	<script type="text/javascript" src="simpCalc.js"></script>
 </head>
-<body>
+<body ng-app="myApp">
 	<div id="frame">
-		<form>
+		<form ng-controller="MyCtrl">
 			<h6>&nbsp;&nbsp;&nbsp;<em>SimpleCalc v1.0</em></h6>
-			<input type="text" class="display" id="display" readonly>
+			<input type="text" class="display" value="{{display}}" id="display" readonly>
 			<br>
 			<div id="btn_grp">
-				<input type="button" class="btn" value="&#8592;" onclick="backSpace()">
-				<input type="button" class="btn" value="C" onclick="clearScreen()">
-				<button type="button" class="btn" id="pw" onclick="power()">TurnON</button>
+				<input type="button" class="btn" value="&#8592;" ng-click="backSpace()">
+				<input type="button" class="btn" value="C" ng-click="clearScreen()">
+				<button type="button" class="btn" id="pw" ng-click="power()">TurnON</button>
 				<br>
-				<input type="button" class="btn" value="7" onclick="nums('7')">
-				<input type="button" class="btn" value="8" onclick="nums('8')">
-				<input type="button" class="btn" value="9" onclick="nums('9')">
-				<input type="button" class="btn" value="x" onclick="operat('*')">
+				<input type="button" class="btn" value="7" ng-click="nums('7')">
+				<input type="button" class="btn" value="8" ng-click="nums('8')">
+				<input type="button" class="btn" value="9" ng-click="nums('9')">
+				<input type="button" class="btn" value="x" ng-click="operat('*')">
 				<br>
-				<input type="button" class="btn" value="4" onclick="nums('4')">
-				<input type="button" class="btn" value="5" onclick="nums('5')">
-				<input type="button" class="btn" value="6" onclick="nums('6')">
-				<input type="button" class="btn" value="&divide;" onclick="operat('/')">			
+				<input type="button" class="btn" value="4" ng-click="nums('4')">
+				<input type="button" class="btn" value="5" ng-click="nums('5')">
+				<input type="button" class="btn" value="6" ng-click="nums('6')">
+				<input type="button" class="btn" value="&divide;" ng-click="operat('/')">			
 				<br>
-				<input type="button" class="btn" value="1" onclick="nums('1')">
-				<input type="button" class="btn" value="2" onclick="nums('2')">
-				<input type="button" class="btn" value="3" onclick="nums('3')">
-				<input type="button" class="btn" value="+" onclick="operat('+')">
+				<input type="button" class="btn" value="1" ng-click="nums('1')">
+				<input type="button" class="btn" value="2" ng-click="nums('2')">
+				<input type="button" class="btn" value="3" ng-click="nums('3')">
+				<input type="button" class="btn" value="+" ng-click="operat('+')">
 				<br>
-				<input type="button" class="btn" value="%" onclick="operat('%')">
-				<input type="button" class="btn" value="0" onclick="nums('0')">
-				<input type="button" class="btn" value="." onclick="dot()">
-				<input type="button" class="btn" value="-" onclick="operat('-')">
+				<input type="button" class="btn" value="%" ng-click="operat('%')">
+				<input type="button" class="btn" value="0" ng-click="nums('0')">
+				<input type="button" class="btn" value="." ng-click="dot()">
+				<input type="button" class="btn" value="-" ng-click="operat('-')">
 				<br>
-				<input type="button" class="btn" value="(" onclick="operat('(')">
-				<input type="button" class="btn" value=")" onclick="operat(')')">
-				<input type="button" class="btn" value="=" onclick="solver()">
+				<input type="button" class="btn" value="(" ng-click="operat('(')">
+				<input type="button" class="btn" value=")" ng-click="operat(')')">
+				<input type="button" class="btn" value="=" ng-click="solver()">
 			</div>
 			
 		</form>
