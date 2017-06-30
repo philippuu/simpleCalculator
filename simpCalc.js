@@ -2,6 +2,7 @@ var app = angular.module('myApp',[]);
 
 app.controller('MyCtrl', function($scope){
 	$scope.display = "0";
+	$scope.pw = "TurnON";
 
 	$scope.power = function() {
 	 	if ($scope.pw == "TurnON") {
