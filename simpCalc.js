@@ -3,6 +3,7 @@ var app = angular.module('myApp',[]);
 app.controller('MyCtrl', function($scope){
 	$scope.display = "";
 	$scope.pw = "TurnON";
+	$scope.reset = false;
 
 	$scope.power = function() {
 	 	if ($scope.pw == "TurnON") {
@@ -52,6 +53,13 @@ app.controller('MyCtrl', function($scope){
 
  	$scope.solver = function() {
 		$scope.display = eval($scope.display);
+	};
+
+	$scope.clearInit = function(){
+		if($scope.reset){
+			$scope.display = "0";
+			$scope.reset = false;
+		}
 	};
 });
 
