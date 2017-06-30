@@ -1,5 +1,18 @@
+var app = angular.module('myApp',[]);
 
-var reset = false;
+app.controller('MyCtrl', function($scope){
+	$scope.display = "0";
+
+	$scope.nums = function(btn) {
+		if($scope.display == "0") {
+	 		$scope.display = btn;
+		}else{
+	 		$scope.display += btn;
+		}
+ 	};
+});
+
+/*var reset = false;
 
 //var checker = document.getElementById("pw").innerHTML;
 
@@ -52,4 +65,4 @@ function clearInit(){
 		document.getElementById("display").value = "";
 		reset = false;
 	}
-}
+}*/
