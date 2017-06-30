@@ -35,6 +35,7 @@ app.controller('MyCtrl', function($scope){
 	};
 
 	$scope.nums = function(btn) {
+		$scope.clearInit();
 		if($scope.pw == "TurnOFF"){
 			if($scope.display == "0") {
 	 			$scope.display = btn;
@@ -46,6 +47,7 @@ app.controller('MyCtrl', function($scope){
  	};
 
  	$scope.operat = function(op) {
+ 		$scope.clearInit();
  		if($scope.pw == "TurnOFF"){
  			$scope.display += op;
  		}
@@ -53,6 +55,7 @@ app.controller('MyCtrl', function($scope){
 
  	$scope.solver = function() {
 		$scope.display = eval($scope.display);
+		$scope.reset = true;
 	};
 
 	$scope.clearInit = function(){
