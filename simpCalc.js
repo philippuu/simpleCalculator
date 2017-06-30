@@ -1,7 +1,7 @@
 var app = angular.module('myApp',[]);
 
 app.controller('MyCtrl', function($scope){
-	$scope.display = "0";
+	$scope.display = "";
 	$scope.pw = "TurnON";
 
 	$scope.power = function() {
@@ -34,15 +34,20 @@ app.controller('MyCtrl', function($scope){
 	};
 
 	$scope.nums = function(btn) {
-		if($scope.display == "0") {
-	 		$scope.display = btn;
-		}else{
-	 		$scope.display += btn;
+		if($scope.pw == "TurnOFF"){
+			if($scope.display == "0") {
+	 			$scope.display = btn;
+			}else{
+		 		$scope.display += btn;
+			}
 		}
+		
  	};
 
  	$scope.operat = function(op) {
-	 $scope.display += op;
+ 		if($scope.pw == "TurnOFF"){
+ 			$scope.display += op;
+ 		}
  	};
 
  	$scope.solver = function() {
