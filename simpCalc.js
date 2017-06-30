@@ -3,6 +3,17 @@ var app = angular.module('myApp',[]);
 app.controller('MyCtrl', function($scope){
 	$scope.display = "0";
 
+	$scope.clearScreen = function(btn) {
+	 	if($scope.display !== "0") {
+			$scope.display = "0";
+		}
+ 	};
+
+ 	$scope.backSpace = function(btn) {
+	 	var backSpaceVar = $scope.display;
+	 	$scope.display = backSpaceVar.slice(0, backSpaceVar.length - 1);
+	};
+
 	$scope.nums = function(btn) {
 		if($scope.display == "0") {
 	 		$scope.display = btn;
@@ -10,6 +21,14 @@ app.controller('MyCtrl', function($scope){
 	 		$scope.display += btn;
 		}
  	};
+
+ 	$scope.operat = function(op) {
+	 $scope.display += op;
+ 	};
+
+ 	$scope.solver = function() {
+		$scope.display = eval($scope.display);
+	};
 });
 
 /*var reset = false;
