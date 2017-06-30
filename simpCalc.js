@@ -3,6 +3,16 @@ var app = angular.module('myApp',[]);
 app.controller('MyCtrl', function($scope){
 	$scope.display = "0";
 
+	$scope.power = function() {
+	 	if ($scope.pw == "TurnON") {
+	 		$scope.pw = "TurnOFF";
+	 		$scope.display = "0";
+	 	} else {
+	 		$scope.pw = "TurnON";
+	 		$scope.display = "";
+	 	}
+ 	};
+
 	$scope.clearScreen = function(btn) {
 	 	if($scope.display !== "0") {
 			$scope.display = "0";
