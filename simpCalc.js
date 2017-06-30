@@ -14,6 +14,14 @@ app.controller('MyCtrl', function($scope){
 	 	}
  	};
 
+ 	$scope.set_color = function() {
+	    if($scope.pw == "TurnOFF"){
+	        return {"background-color": "green"};
+	    }else{
+	        return {"background-color": "red"};
+	    }
+ 	};
+
 	$scope.clearScreen = function(btn) {
 	 	if($scope.display !== "0") {
 			$scope.display = "0";
