@@ -49,7 +49,12 @@ app.controller('MyCtrl', function($scope){
  	$scope.operat = function(op) {
  		$scope.clearInit();
  		if($scope.pw == "TurnOFF"){
- 			$scope.display += op;
+ 			if ($scope.display == "0") {
+ 				$scope.display += "";
+ 			} else {
+ 				$scope.display += op;
+ 			}
+ 			
  		}
  	};
 
