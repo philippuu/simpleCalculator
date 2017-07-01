@@ -53,6 +53,15 @@ app.controller('MyCtrl', function($scope){
  		}
  	};
 
+ 	$scope.dot= function() {
+ 		$scope.clearInit();
+	  	if ($scope.display.includes(".")){
+			$scope.display += "";
+	  	}else{
+	  		$scope.display += ".";
+	  	}
+	}
+
  	$scope.solver = function() {
 		$scope.display = eval($scope.display);
 		$scope.reset = true;
