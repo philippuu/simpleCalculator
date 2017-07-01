@@ -55,11 +55,13 @@ app.controller('MyCtrl', function($scope){
 
  	$scope.dot= function() {
  		$scope.clearInit();
-	  	if ($scope.display.includes(".")){
-			$scope.display += "";
-	  	}else{
-	  		$scope.display += ".";
-	  	}
+ 		if($scope.pw == "TurnOFF"){
+		  	if ($scope.display.includes(".")){
+				$scope.display += "";
+		  	}else{
+		  		$scope.display += ".";
+		  	}
+		}
 	}
 
  	$scope.solver = function() {
