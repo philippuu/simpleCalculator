@@ -1,4 +1,3 @@
-
 var reset = false;
 
 //var checker = document.getElementById("pw").innerHTML;
@@ -24,14 +23,27 @@ function clearScreen() {
 }
 
 function nums(numValue) {
-	clearInit();
+	if(document.getElementById('display').value == 'Error'){
+		clearInit();
+	}
+	if(reset == true){
+		var disp = document.getElementById('display');
+		if( (disp.value.slice(-1) == '+') || (disp.value.slice(-1) == '-') || 
+			(disp.value.slice(-1) == '*') || (disp.value.slice(-1) == '/') || 
+			(disp.value.slice(-1) == '%')){
+				reset = false;
+			}
+		clearInit();
+	}
 	if (document.getElementById("pw").innerHTML == "TurnOFF") {
 		document.getElementById("display").value += numValue;
 	}
 }
 
 function operat(operatValue) {
-	clearInit();
+	if(document.getElementById('display').value == 'Error'){
+		clearInit();
+	}
 	if (document.getElementById("pw").innerHTML == "TurnOFF") {
 		document.getElementById("display").value+=operatValue;
 	}
@@ -40,6 +52,7 @@ function operat(operatValue) {
 function solver() {
 	var ans = eval(document.getElementById("display").value);
 	document.getElementById("display").value = ans;
+	document.getElementById("initVal").value = document.getElementById("display").value;
 	reset = true;
 }
 
