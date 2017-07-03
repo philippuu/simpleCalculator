@@ -35,7 +35,16 @@ app.controller('MyCtrl', function($scope){
 	};
 
 	$scope.nums = function(btn) {
+		if ($scope.display == "Infinity") {
+			$scope.reset = true;
+		}
+		if ($scope.display.slice(-1) == "*" || $scope.display.slice(-1) == "/" ||
+			$scope.display.slice(-1) == "+" || $scope.display.slice(-1) == "-") {
+			$scope.reset = false;
+		}
 		$scope.clearInit();
+		
+		
 		if($scope.pw == "TurnOFF"){
 			if($scope.display == "0") {
 	 			$scope.display = btn;
@@ -47,7 +56,11 @@ app.controller('MyCtrl', function($scope){
  	};
 
  	$scope.operat = function(op) {
- 		$scope.clearInit();
+		if ($scope.display == "Infinity") {
+			$scope.reset = true;
+			$scope.clearInit();
+		}
+ 		
  		if($scope.pw == "TurnOFF"){
  			if ($scope.display == "0") {
  				$scope.display += "";
@@ -71,7 +84,7 @@ app.controller('MyCtrl', function($scope){
 
  	$scope.solver = function() {
 		$scope.display = eval($scope.display);
-		$scope.reset = true;
+		$scope.reset = false;
 	};
 
 	$scope.clearInit = function(){
@@ -81,58 +94,3 @@ app.controller('MyCtrl', function($scope){
 		}
 	};
 });
-
-/*var reset = false;
-
-//var checker = document.getElementById("pw").innerHTML;
-
-function power(){
-	if (document.getElementById("pw").innerHTML == "TurnON") {
-		document.getElementById("pw").innerHTML = "TurnOFF";
-		document.getElementById("pw").style.background = "green";
-	} else {
-		document.getElementById("pw").innerHTML = "TurnON";
-		document.getElementById("display").value = "";
-		document.getElementById("pw").style.background = "red";
-	}
-}
-
-function backSpace() {
-	var backSpaceVar = document.getElementById("display").value;
-	document.getElementById("display").value = backSpaceVar.slice(0, backSpaceVar.length - 1);
-}
-
-function clearScreen() {
-	document.getElementById("display").value = "";
-}
-
-function nums(numValue) {
-	clearInit();
-	if (document.getElementById("pw").innerHTML == "TurnOFF") {
-		document.getElementById("display").value += numValue;
-	}
-}
-
-function operat(operatValue) {
-	clearInit();
-	if (document.getElementById("pw").innerHTML == "TurnOFF") {
-		document.getElementById("display").value+=operatValue;
-	}
-}
-
-function solver() {
-	var ans = eval(document.getElementById("display").value);
-	document.getElementById("display").value = ans;
-	reset = true;
-}
-
-function dot() {
-	document.getElementById("display").value += ".";
-}
-
-function clearInit(){
-	if(reset){
-		document.getElementById("display").value = "";
-		reset = false;
-	}
-}*/
