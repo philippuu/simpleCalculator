@@ -4,9 +4,10 @@
   "authors": [
     "Philip <philip@lotusbetaanalytics.com>"
   ],
-  "description": "A simple calculator",
+  "description": "",
   "main": "",
   "license": "MIT",
+  "private": true,
   "ignore": [
     "**/.*",
     "node_modules",
