@@ -1,0 +1,17 @@
+{
+  "name": "simpleCalculator",
+  "homepage": "https://github.com/philippuu/simpleCalculator",
+  "authors": [
+    "Philip <philip@lotusbetaanalytics.com>"
+  ],
+  "description": "A simple calculator",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
